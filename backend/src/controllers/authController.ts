@@ -21,7 +21,7 @@ export const getMe = async (
     res.status(200).json(user);
   } catch (error) {
     res.status(500);
-    next();
+    next(error);
   }
 };
 
@@ -61,6 +61,6 @@ export const authCallback = async (
     res.status(200).json(user);
   } catch (error) {
     res.status(500);
-    next();
+    next(error);
   }
 };
