@@ -10,9 +10,9 @@ export interface IChat extends Document {
 
 const ChatSchema = new Schema<IChat>(
   {
-    participants: [{ type: Schema.Types.ObjectId, ref: "User" }],
+    participants: [{ type: Schema.Types.ObjectId, ref: "User" , required: true}],
     lastMessage: { type: Schema.Types.ObjectId, ref: "Message" },
-    lastMessageAt: { type: Date },
+    lastMessageAt: { type: Date, default:Date.now },
   },
   {
     timestamps: true,
